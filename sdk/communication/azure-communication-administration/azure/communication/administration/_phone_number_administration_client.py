@@ -88,7 +88,7 @@ class PhoneNumberAdministrationClient(object):
             self,
             **kwargs  # type: Any
     ):
-        # type: (...) -> ItemPaged[AcquiredPhoneNumbers]
+        # type: (...) -> ItemPaged[AcquiredPhoneNumber]
         """Gets the list of the acquired phone numbers.
 
         :keyword str locale: A language-locale pairing which will be used to localise the names of countries.
@@ -97,7 +97,7 @@ class PhoneNumberAdministrationClient(object):
         The default is 0.
         :keyword int take: An optional parameter for how many entries to return, for pagination purposes.
         The default is 100.
-        :rtype: ~azure.core.paging.ItemPaged[~azure.communication.administration.AcquiredPhoneNumbers]
+        :rtype: ~azure.core.paging.ItemPaged[~azure.communication.administration.AcquiredPhoneNumber]
         """
         return self._phone_number_administration_client.phone_number_administration.get_all_phone_numbers(
             **kwargs
