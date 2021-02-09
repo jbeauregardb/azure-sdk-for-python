@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 09 Feb 2021 15:44:35 GMT
+      User-Agent:
+      - azsdk-python-communication-administration/1.0.0b4 Python/3.8.5 (Windows-10-10.0.19041-SP0)
+      x-ms-return-client-request-id:
+      - 'true'
+    method: GET
+    uri: https://sanitized.communication.azure.com/phoneNumbers/%2B16194895842?api-version=2021-03-07
+  response:
+    body:
+      string: '{"error": {"code": "PhoneNumberNotFound", "message": "The specified
+        phone number +16194895842 cannot be found.", "target": "phonenumber"}}'
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 09 Feb 2021 15:44:34 GMT
+      ms-cv:
+      - Ga/SBEjZoU2YnVz2yfTphw.0
+      request-context:
+      - appId=
+      transfer-encoding:
+      - chunked
+      x-processing-time:
+      - 583ms
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -2,7 +2,7 @@ from azure.core.tracing.decorator import distributed_trace
 from azure.core.paging import ItemPaged
 from azure.core.polling import LROPoller
 from ._phonenumber._generated._phone_numbers_client import PhoneNumbersClient as PhoneNumbersClientGen
-from azure.communication.administration.models._phonenumber._generated.models import PhoneNumberSearchRequest
+from ._phonenumber._generated.models import PhoneNumberSearchRequest
 from ._shared.utils import parse_connection_str, get_authentication_policy
 from ._version import SDK_MONIKER
 
@@ -140,7 +140,7 @@ class PhoneNumbersClient(object):
             area_code = area_code,
             quantity = quantity
         )
-        return self._phone_number_client.phone_numbers.begin_release_phone_number(
+        return self._phone_number_client.phone_numbers.begin_search_available_phone_numbers(
             country_code,
             search_request,
             **kwargs
@@ -171,7 +171,7 @@ class PhoneNumbersClient(object):
         :keyword int polling_interval: Default waiting time between two polls for LRO operations if no Retry-After header is present.
         :rtype: ~azure.core.polling.LROPoller[AcquiredPhoneNumber]
         """
-        return self._phone_number_client.phone_numbers.begin_update_phone_number_capabilities(
+        return self._phone_number_client.phone_numbers.begin_update_capabilities(
             phone_number,
             calling,
             sms,
@@ -184,7 +184,7 @@ class PhoneNumbersClient(object):
             phone_number,
             **kwargs
     ):
-        # type: (...) -> AcquiredPhoneNumbers
+        # type: (...) -> AcquiredPhoneNumber
         """Gets the details of the given acquired phone number.
 
         :param phone_number: The acquired phone number whose details are to be fetched in E.164 format,
